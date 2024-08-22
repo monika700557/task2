@@ -1,0 +1,189 @@
+body {
+    font-family: "Segoe UI";
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    background-color: #f8f8f8;
+    font-size: 11px;
+}
+
+img.rect {
+    width: 3rem;
+}
+ bold.sku1 {
+    font-weight: 600;
+}
+
+p {
+    display: block;
+    margin-block-start: auto;
+}
+.logo {
+    width: 100px;
+}
+
+.company-info {
+    text-align: right;
+}
+
+.invoice {
+    width: 100%;
+}
+tr#first-row {
+    border-bottom: 1px solid #bfc3c5;
+}
+.customer-info {
+    margin-bottom: 20px;
+}
+
+
+.invoice-table th,
+.invoice-table td {
+    padding: 7px;
+    vertical-align: top;
+}
+
+.invoice-table th {
+    background-color: #f2f2f2;
+}
+
+.invoice-table {
+    min-width: 99%;
+    border-collapse: collapse;
+    border: 3px solid #0f6e95;
+    text-align: left;
+    margin: auto;
+    max-height: 90vh;
+
+}
+
+
+/*  Hedaer's css  */
+
+.address {
+    display: flex;
+    gap: 4px;
+}
+.address-text {
+    line-height: 21px;
+    vertical-align: top;
+    margin-top: -3px;
+}
+.mail {
+    display: flex;
+    gap: 4px;
+}
+.mail-text {
+    margin-left: 4px;
+}
+p.tax {
+    display: flex;
+    margin-left: 5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.header-container {
+    display: flex;
+    width: 100%;
+
+}
+
+.header-main {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    max-height: 35vh;
+    }
+
+img#logo {
+    height: 69px;
+    width: 90px;
+    display: block;
+}
+
+.pico1 {
+    display: flex;
+    flex-direction: row;
+    top: 5rem;
+    margin-top: 1.5rem;
+    gap: 2rem;
+    text-align: left;
+    margin-left: 5rem;
+}
+.pico2 {
+    display: flex;
+    flex-direction: row;
+    top: 5rem;
+    margin-top: 2rem;
+    gap: 3rem;
+    text-align: left;
+    margin-left: 5rem;
+}
+.diff {
+    text-align: end;
+}
+.header-left {
+   
+    line-height: 11px;
+}
+.side-right {
+    line-height: 12px;
+}
+.left-bottom {
+   margin-top: 2rem;
+    line-height: 11px;
+}
+.header-right {
+    line-height: 12px;
+}
+.header-left,
+.left-bottom,
+.side-right,
+.header-right {
+    white-space: nowrap;
+}
+
+
+
+
+/*  Footer 's page css */
+
+.footer {
+    text-align: center;
+    padding: 2px;
+    font-size: 12px;
+    color: black;
+    margin-top: 0rem;
+}
+.footer-center {
+    position: relative;
+    text-align: center;
+    padding: 7px;
+    font-size: 9px;
+}
+
+.footer-center p {
+    margin: 0;
+}
+
+.qr-code {
+    position: absolute;
+    bottom: -12px;
+    width: 3rem;
+    /* align-items: flex-end; */
+    display: flex;
+    /* text-align: end; */
+    justify-content: end;
+    right: 0;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: end;
+    width: 44%;
+    gap: 25px;
+    margin-top: 0px;
+    font-size: 8px;
+}
