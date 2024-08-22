@@ -4,21 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
   </head>
   <body>
-    <title>{{metal}}</title>
     <div class="header-container">
       <div class="header-main">
         <div class="pico1">
           <div class="header-left">
             <h3>Custmoer</h3>
             <p>Account</p>
-            <p>Custmoer ame</p>
+            <p>Custmoer Name</p>
             <p>Street Addrress</p>
           </div>
 
           <div class="left-bottom">
-            <p>{{size_name}}</p>
+            <!-- <p>{sell_info.cart.[0].customer_id}}{</p> -->
             <p>{{custmorName}}</p>
 
             <div class="address">
@@ -66,7 +66,7 @@
                   fill="black"
                 />
               </svg>
-            {{call}}
+              {{sell_info.cart.[0].customer_contact.mobile_number}}
             </p>
             <div class="mail">
               <div class="mail-icon">
@@ -84,7 +84,7 @@
                 </svg>
               </div>
               <div class="mail-text">
-                <span>{{email}}</span>
+                <span>{{sell_info.cart.[0].customer_contact.email}}</span>
               </div>
             </div>
           </div>
@@ -106,12 +106,32 @@
 
           <div class="header-right">
            <h3> <p><strong>{{title}}</strong></p></h3>
-            <p>{{time}}</p>
-            <p>{{ trn_no}}</p>
-            <p>Rose</p>
+
+    
+            
+            {{#each sell_info.cart.[0].product_details.Stones}}
+    <div class="stone-info">
+
+      {{#compare cut_name '===' 'Heart & Arrow'}}
+      <p><strong></strong> {{cut_name}}</p>
+    {{/compare}}
+    
+    {{#compare Cut '===' '6375cf6b3c04c604447519ea'}}
+    <p><strong></strong> {{Cut}}</p>
+  {{/compare}}
+  
+      {{#if certificate.number}}
+        <p> {{shape}}</p>
+    
+      {{/if}}
+    </div>
+  {{/each}}
+          
+           
           </div>
         </div>
       </div>
     </div>
+ 
   </body>
 </html>
