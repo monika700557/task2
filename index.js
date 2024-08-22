@@ -12,7 +12,6 @@ const finalHtmlPath = path.join(__dirname, 'finalTemplate.html');
 
 const { data } = require('./mockData');
 
-const metal = data.sell_info.cart[0].product_details.Metal;
 
 function cleanData(data) {
     const fieldsToRemove = [
