@@ -9,6 +9,7 @@ const port = 4001;
 const finalHtmlPath = path.join(__dirname, 'finalTemplate.html');
 const { data } = require('./mockData');
 
+// Create a new Handlebars instance
 const hbs = Handlebars.create();
 
 // console.log('Original Data:', JSON.stringify(data, null, 2));
@@ -73,9 +74,11 @@ app.get('/', async (req, res) => {
         const footerHtml = await fs.readFile(footerPath, 'utf8');
         const cssContent = await fs.readFile(cssPath, 'utf8');
 
-        
+        // Register partials with the same Handlebars instance
         hbs.registerPartial('header', headerHtml);
         hbs.registerPartial('footer', footerHtml);
+
+        // Compile the template with the Handlebars instance where the helper is registered
         const template = hbs.compile(templateHtml);
         const finalHtml = template({ ...originalData, cssContent });
 
@@ -110,6 +113,7 @@ app.get('/generate-pdf', async (req, res) => {
         await page.setContent(html, { waitUntil: 'networkidle0' });
         const pdfPath = path.join(__dirname, 'output.pdf');
         await page.pdf({ path: pdfPath, format: 'A4', printBackground: true });
+        console.log(data);
         await browser.close();
 
         res.send(`PDF generated and saved to ${pdfPath}.`);
