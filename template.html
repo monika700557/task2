@@ -10,11 +10,13 @@
 
 <body>
     {{> header}}
-    <p class="tax"><bold>Tax ID:</bold></p>
+    <p class="tax">
+        <bold>Tax ID:</bold>
+    </p>
     <main>
-            
+
         <div class="invoice">
-      
+
             <table class="invoice-table">
                 <thead>
                     <tr id="first-row">
@@ -32,113 +34,439 @@
                     <tr>
                         <td>1</td>
                         <td><img src="./assets/rect.png" class="rect" alt="Product Image"></td>
-                        <td ><bold class="sku1">{{sku}}</bold>  <p>10001</p></td>
-                      
-
                         <td>
-                            <p> 18 Karat Gold Diamond Crown Ring  <br />Intricately crafted crown design. <br />
-                            18K 3.90g <br /> 26 Dia 00.9c <br /> 1 Ruby 5c <br />
-                            <ul>
-                                <li>Service Ring Engrave</li>
-                                <li>Service ring Resizing</li>
-                            </ul>
-                            </p>
-                        
+                            <bold class="sku1">{{#each sell_info.cart}}
+                                SKU: {{SKU}}
+                                {{/each}}</bold>
                         </td>
-                        <td>49</td>
-                        <td>1</td>
-                        <td>$50,000.00 <br />  <br />  <br />  <br />  <br /> $10,000.00 <br/>$50,000.00 </td>
-                        <td>$50,000.00  <br />  <br />  <br />  <br />  <br /> $5000.00 <br/>$50,000.00</td>
+                        <td>
+                            {{#each sell_info.cart}}
+                            {{#if product_details.Stones}}
+                            {{#each product_details.Stones}}
+
+                            {{#compare stone_group '===' '63560539dcf7ec0c616fea1fa'}}
+                            {{stone_group}}<br>
+                            {{/compare}}
+
+                            {{#compare size_name '===' '1 Ruby 5c'}}
+                            <strong></strong> {{size_name}}<br>
+                            {{/compare}}
+
+                            {{#compare stone_name '===' '18 Karat Gold Diamond Crown Ring'}}
+                            {{stone_name}}<br>
+                            {{/compare}}
+
+                            {{#compare shape_name '===' 'Brilliant Round1'}}
+                            {{shape_name}}<br>
+                            {{/compare}}
+                            {{#compare clarity_name '===' '26 Dia 00.9c'}}
+                            {{clarity_name}}<br>
+                            {{/compare}}
+                            {{#compare setting_name '===' 'Intricately crafted crown design'}}
+                            {{setting_name}}<br>
+                            {{/compare}}
+                            <ul>
+                                {{#compare color_name '===' '18K 3.90g'}}
+                                <li>{{color_name}}</li>
+                                {{/compare}}
+
+                                {{#compare cut_name '===' 'Heart & Arrow1'}}
+                                <li>{{cut_name}}</li>
+                                {{/compare}}
+                            </ul>
+
+                            {{/each}}
+                            {{else}}
+                            <p>No stones available.</p>
+                            {{/if}}
+                            {{/each}}
+                        </td>
+
+
+                        <td> {{#each sell_info.cart}}
+                            {{#if product_details.Stones}}
+                            {{#each product_details.Stones}}
+
+                            {{#compare Size '===' '63858e2ec0d74d7f332eaa156'}}
+                            {{Size}}<br>
+                            {{/compare}}
+
+                            {{/each}}
+                            {{else}}
+                            <p>No stones available.</p>
+                            {{/if}}
+                            {{/each}}
+
+                        </td>
+
+                        <td> {{#each sell_info.cart}} <p>
+                                {{product_details.po_QTY}}
+                            </p> {{/each}} </td>
+
+                        <td>{{#each sell_info.cart}}
+                            <p>
+                                {{price}}
+                            </p>                
+<br /> <br /> <br /> <br /> <br />  {{price}} <br />  {{price}} {{/each}}</td>   
+
+                        <td> {{payment_info.pay_data.cash.amount}}
+                         <br /> <br /> <br /> <br /> <br />     {{payment_info.pay_data.cash.amount}}<br />   {{payment_info.pay_data.cash.amount}}</td>
+
                     </tr>
+
                     <tr>
                         <td>2</td>
                         <td><img src="./assets/rect.png" class="rect" alt="Product Image"></td>
-                        <td ><bold class="sku1">{{sku}}</bold>  <p>10001</p></td>
                         <td>
-                            <p> 18 Karat Gold Diamond Crown Ring  <br />Intricately crafted crown design. 
-                                <br /> 18K 3.90g <br /> 26 Dia 00.9c <br /> 1 Ruby 5c <br />
-                            <ul>
-                                <li>Service Cleaning</li>
-                               
-                            </ul>
-                            </p>
-                        
+                            <bold class="sku1">{{#each sell_info.cart}}
+                                SKU: {{SKU}}
+                                {{/each}}</bold>
                         </td>
-                        <td>49</td>
-                        <td>1</td>
-                        <td>$50,000.00 <br />  <br />  <br />  <br />  <br />  <br/>$800.00 </td>
-                        <td>$20,000.00 <br />  <br />  <br />  <br />  <br />  <br/>$800.00</td>
+
+                        <td>
+                            {{#each sell_info.cart}}
+                            {{#if product_details.Stones}}
+                            {{#each product_details.Stones}}
+
+                            {{#compare stone_group '===' '63560539dcf7ec0c616fea1fb'}}
+                            {{stone_group}}<br>
+                            {{/compare}}
+
+                            {{#compare size_name '===' '3.80MM'}}
+                            <strong></strong> {{size_name}}<br>
+                            {{/compare}}
+
+                            {{#compare stone_name '===' 'Diamond2'}}
+                            {{stone_name}}<br>
+                            {{/compare}}
+
+                            {{#compare shape_name '===' 'Brilliant Round2'}}
+                            {{shape_name}}<br>
+                            {{/compare}}
+
+                            {{#compare clarity_name '===' 'VS22'}}
+                            {{clarity_name}}<br>
+                            {{/compare}}
+
+                            {{#compare setting_name '===' 'Pave2'}}
+                            {{setting_name}}<br>
+                            {{/compare}}
+
+                            <ul>
+                                {{#compare color_name '===' 'J2Diamond'}}
+                                <li>{{color_name}}</li>
+                                {{/compare}}
+                            </ul>
+
+        
+
+                            {{/each}}
+                            {{else}}
+                            <p>No stones available.</p>
+                            {{/if}}
+                            {{/each}}
+
+                        </td>
+
+                        <td> {{#each sell_info.cart}}
+                            {{#if product_details.Stones}}
+                            {{#each product_details.Stones}}
+
+                            {{#compare Size '===' '63560917044ba54bde4d2a16b'}}
+                            {{Size}}<br>
+                            {{/compare}}
+
+                            {{/each}}
+                            {{else}}
+                            <p>No stones available.</p>
+                            {{/if}}
+                            {{/each}}
+
+                        </td>
+
+                        <td> {{#each sell_info.cart}} <p>
+                            {{product_details.po_QTY}}
+                        </p> {{/each}} </td>
+
+                        <td>{{sell_info.summary_order.tax_amount_int}}<br /> <br /> <br /> <br /> <br /> <br />{{sell_info.summary_order.tax_amount_int}}</td>
+                        <td>{{sell_info.summary_order.tax_amount_int}}<br /> <br /> <br /> <br /> <br /> <br />{{sell_info.summary_order.tax_amount_int}}</td>
                     </tr>
+
+
                     <tr>
                         <td>3</td>
-                        <td><img src="https://anantajewelry.com/pub/media/customization/product/SB029YG070.png"                            " class="rect" alt="Product Image"></td>
-                        <td ><bold class="sku1">{{sku}}</bold>  <p>10001</p></td>
+                        <td><img src="https://anantajewelry.com/pub/media/customization/product/SB029YG070.png" class="
+                                rect" alt="Product Image"></td>
                         <td>
-                            <p> 18 Karat Gold Diamond Crown Ring  <br />Intricately crafted crown design. 
-                                <br /> 18K 3.90g <br /> 26 Dia 00.9c <br /> 1 Ruby 5c <br />
-                            <ul>
-                                <li>Service ring Engrave</li>
-                                <li>Service ring Resizing</li>
-                            </ul>
-                            </p>
-                        
+                            <bold class="sku1">{{#each sell_info.cart}}
+                                SKU: {{SKU}}
+                                {{/each}}</bold>
                         </td>
-                        <td>49</td>
+                        <td>
+                            {{#each sell_info.cart}}
+                            {{#if product_details.Stones}}
+                            {{#each product_details.Stones}}
+
+                            {{#compare stone_group '===' '18 Karat Gold Diamond Crown Ring'}}
+                            {{stone_group}}<br>
+                            {{/compare}}
+
+                            {{#compare size_name '===' '4.80MM'}}
+                            <strong></strong> {{size_name}}<br>
+                            {{/compare}}
+
+                            {{#compare stone_name '===' 'Intricately crafted crown design'}}
+                            {{stone_name}}<br>
+                            {{/compare}}
+
+                            {{#compare shape_name '===' 'Brilliant Round3'}}
+                            {{shape_name}}<br>
+                            {{/compare}}
+
+                            {{#compare clarity_name '===' 'VS223'}}
+                            {{clarity_name}}<br>
+                            {{/compare}}
+
+                      
+
+                            <ul>
+                                {{#compare color_name '===' 'JDiamond3'}}
+                                <li>{{color_name}}</li>
+                                {{/compare}}
+                            </ul>
+
+        
+
+                            {{/each}}
+                            {{else}}
+                            <p>No stones available.</p>
+                            {{/if}}
+                            {{/each}}
+
+                        </td>
+                        <td> {{#each sell_info.cart}}
+                            {{#if product_details.Stones}}
+                            {{#each product_details.Stones}}
+
+                            {{#compare Size '===' '63560917044ba54bde4d2a16b'}}
+                            {{Size}}<br>
+                            {{/compare}}
+
+                            {{/each}}
+                            {{else}}
+                            <p>No stones available.</p>
+                            {{/if}}
+                            {{/each}}
+
+                        </td>
+
                         <td>1</td>
-                        <td>$50,000.00 <br />  <br />  <br />  <br />  <br /> $10,000.00 <br/>$50,000.00 </td>
-                        <td>$50,000.00  <br />  <br />  <br />  <br />  <br /> $5000.00 <br/>$50,000.00</td>
+                        <td>{{sell_info.summary_order.tax_amount_int}}<br /> <br /> <br /> <br /> <br /> <br />{{sell_info.summary_order.tax_amount_int}}</td>
+                        <td>{{sell_info.summary_order.tax_amount_int}}<br /> <br /> <br /> <br /> <br /> <br />{{sell_info.summary_order.tax_amount_int}}</td>
                     </tr>
+
+
                     <tr>
                         <td>4</td>
                         <td><img src="./assets/rect.png" class="rect" alt="Product Image"></td>
-                        <td ><bold class="sku1">{{sku}}</bold>  <p>10001</p></td>
                         <td>
-                            <p> 18 Karat Gold Diamond Crown Ring  <br />Intricately crafted crown design. 
-                                <br /> 18K 3.90g <br /> 26 Dia 00.9c <br /> 1 Ruby 5c <br />
-                            <ul>
-                                <li>Service Ring Engrave</li>
-                                <li>Service Ring Resizing</li>
-                            </ul>
-                            </p>
-                        
+                            <bold class="sku1">{{#each sell_info.cart}}
+                                SKU: {{SKU}}
+                                {{/each}}</bold>
                         </td>
-                        <td>49</td>
+                        <td>
+                            {{#each sell_info.cart}}
+                            {{#if Stones}}
+                            {{#each Stones}}
+
+                            {{#compare stone_group '===' '63560539dcf7ec0c616fea1f'}}
+                            {{stone_group}}<br>
+                            {{/compare}}
+
+                            {{#compare size_name '===' '3.80MMD'}}
+                            <strong></strong> {{size_name}}<br>
+                            {{/compare}}
+
+                            {{#compare stone_name '===' '26 Ruby 9c'}}
+                            {{stone_name}}<br>
+                            {{/compare}}
+
+                            {{#compare shape_name '===' 'Brilliant Round4'}}
+                            {{shape_name}}<br>
+                            {{/compare}}
+
+                            {{#compare clarity_name '===' '187K 3.90g'}}
+                            {{clarity_name}}<br>
+                            {{/compare}}
+
+                      
+
+                            <ul>
+                                {{#compare color_name '===' 'Service Ring Engrave'}}
+                                <li>{{color_name}}</li>
+                                {{/compare}}
+                                {{#compare setting_name '===' 'Solitaire'}}
+                                <li>{{setting_name}}</li>
+                                {{/compare}}
+                            </ul>
+
+        
+
+                            {{/each}}
+                            {{else}}
+                            <p>No stones available.</p>
+                            {{/if}}
+                            {{/each}}
+
+
+                        </td>
+                      <td> {{#each sell_info.cart}}
+                            {{#if product_details.Stones}}
+                            {{#each product_details.Stones}}
+
+                            {{#compare Size '===' '63560917044ba54bde4d2a16b'}}
+                            {{Size}}<br>
+                            {{/compare}}
+
+                            {{/each}}
+                            {{else}}
+                            <p>No stones available.</p>
+                            {{/if}}
+                            {{/each}}
+
+                        </td>
                         <td>1</td>
-                        <td>$50,000.00 <br />  <br />  <br />  <br />  <br /> $10,000.00 <br/>$50,000.00 </td>
-                        <td>$50,000.00  <br />  <br />  <br />  <br />  <br /> $5000.00 <br/>$50,000.00</td>
+                        <td>{{sell_info.summary_order.tax_amount_int}} <br /> <br /> <br /> <br /> <br /> {{sell_info.summary_order.tax_amount_int}}<br />{{sell_info.summary_order.tax_amount}} </td>
+                        <td>{{sell_info.summary_order.tax_amount_int}}<br /> <br /> <br /> <br /> <br /> $5000.00 <br />{{sell_info.summary_order.tax_amount}}</td>
                     </tr>
+
                     <tr>
                         <td>5</td>
                         <td><img src="./assets/rect.png" class="rect" alt="Product Image"></td>
-                        <td ><bold class="sku1">{{sku}}</bold>  <p>10001</p></td>
                         <td>
-                            <p> 18 Karat Gold Diamond Crown Ring  <br />Intricately crafted crown design. 
-                                <br /> 18K 3.90g <br />Pointer: 0.20 <br />26 Dia 0.09c <br />
-                        
-                            </p>
-                        
+                            <bold class="sku1">{{#each sell_info.cart}}
+                                SKU: {{SKU}}
+                                {{/each}}</bold>
                         </td>
-                        <td>49</td>
+                        <td>
+                            {{#each sell_info.cart}}
+                            {{#if Stones}}
+                            {{#each Stones}}
+
+                            {{#compare stone_group '===' '63560539dcf7ec0c616fea1fb5'}}
+                            {{stone_group}}<br>
+                            {{/compare}}
+
+                            {{#compare size_name '===' '3.80MM90'}}
+                            <strong></strong> {{size_name}}<br>
+                            {{/compare}}
+
+                            {{#compare stone_name '===' '23 Ruby 9c'}}
+                            {{stone_name}}<br>
+                            {{/compare}}
+
+                            {{#compare shape_name '===' 'Brilliant Round5'}}
+                            {{shape_name}}<br>
+                            {{/compare}}
+
+                            {{#compare clarity_name '===' '187K 3.907g'}}
+                            {{clarity_name}}<br>
+                            {{/compare}}
+
+                      
+
+                            <ul>
+                                {{#compare color_name '===' 'Service Ring Engrav1'}}
+                                <li>{{color_name}}</li>
+                                {{/compare}}
+                                {{#compare setting_name '===' 'Solitaire diamond'}}
+                                <li>{{setting_name}}</li>
+                                {{/compare}}
+                            </ul>
+
+        
+
+                            {{/each}}
+                            {{else}}
+                            <p>No stones available.</p>
+                            {{/if}}
+                            {{/each}}
+
+
+
+                        </td>
+                        <td> {{#each sell_info.cart}}
+                            {{#if product_details.Stones}}
+                            {{#each product_details.Stones}}
+
+                            {{#compare Size '===' '63560917044ba54bde4d2a16b'}}
+                            {{Size}}<br>
+                            {{/compare}}
+
+                            {{/each}}
+                            {{else}}
+                            <p>No stones available.</p>
+                            {{/if}}
+                            {{/each}}
+
+                        </td>
                         <td>1</td>
-                        <td>$50,000.00</td>
-                        <td>$50,000.00</td>
+                        <td>{{sell_info.summary_order.Sub_Total}}</td>
+                        <td>{{sell_info.summary_order.Sub_Total}}</td>
                     </tr>
 
 
                     <tr>
                         <td></td>
-                        <td><img src="./assets/rect.png" class="rect"   alt="Product Image"></td>
-                        <td ><bold class="sku1">GIA: 2427057365</bold>  <p>9657373</p></td>
+                        <td><img src="./assets/rect.png" class="rect" alt="Product Image"></td>
                         <td>
-                            <p>1.01 carats, G colour, SI1 clarity  <br />round ideal Cut<br />
-                            </p>
-                        
+                            <bold class="sku1">{{#each sell_info.cart}}
+                                SKU: {{SKU}}
+                                {{/each}}</bold>
                         </td>
-                        <td>49</td>
+                        <td>
+                            {{#each sell_info.cart}}
+                            {{#if Stones}}
+                            {{#each Stones}}
+
+                            {{#compare stone_name '===' '1.01 carats, G colour, SI1 clarity'}}
+                            {{stone_name}}<br>
+                            {{/compare}}
+
+                            {{#compare shape_name '===' 'round ideal Cut'}}
+                            {{shape_name}}<br>
+                            {{/compare}}
+
+            
+                            {{/each}}
+                            {{else}}
+                            <p>No stones available.</p>
+                            {{/if}}
+                            {{/each}}
+
+
+
+
+                        </td>
+                        <td> {{#each sell_info.cart}}
+                            {{#if product_details.Stones}}
+                            {{#each product_details.Stones}}
+
+                            {{#compare Size '===' '63560917044ba54bde4d2a16b'}}
+                            {{Size}}<br>
+                            {{/compare}}
+
+                            {{/each}}
+                            {{else}}
+                            <p>No stones available.</p>
+                            {{/if}}
+                            {{/each}}
+
+                        </td>
                         <td>1</td>
                         <td>$50,000.00</td>
                         <td>$50,000.00</td>
-                     </tr>
+                    </tr>
 
 
 
@@ -146,22 +474,57 @@
 
                     <tr>
                         <td>6</td>
-                        <td><img src="./assets/rect.png" class="rect"   alt="Product Image"></td>
-                        <td ><bold class="sku1">GIA:2427057365</bold>  <p>947482</p></td>
+                        <td><img src="./assets/rect.png" class="rect" alt="Product Image"></td>
                         <td>
-                            <p>1.01 carats, G colour, SI1 clarity  <br />round ideal Cut<br />
-    
-                           
-                            </p>
+                            <bold class="sku1">{{#each sell_info.cart}}
+                                SKU: {{SKU}}
+                                {{/each}}</bold>
                         </td>
-                        <td>49</td>
+                        </td>
+                        <td>
+                            {{#each sell_info.cart}}
+                            {{#if Stones}}
+                            {{#each Stones}}
+
+                            {{#compare stone_name '===' '1.01 carats, G colour, SI1 clarity'}}
+                            {{stone_name}}<br>
+                            {{/compare}}
+
+                            {{#compare shape_name '===' 'round ideal Cut'}}
+                            {{shape_name}}<br>
+                            {{/compare}}
+
+            
+                            {{/each}}
+                            {{else}}
+                            <p>No stones available.</p>
+                            {{/if}}
+                            {{/each}}
+
+
+                        </td>
+                        <td> {{#each sell_info.cart}}
+                            {{#if product_details.Stones}}
+                            {{#each product_details.Stones}}
+
+                            {{#compare Size '===' '63560917044ba54bde4d2a16b'}}
+                            {{Size}}<br>
+                            {{/compare}}
+
+                            {{/each}}
+                            {{else}}
+                            <p>No stones available.</p>
+                            {{/if}}
+                            {{/each}}
+
+                        </td>
                         <td>1</td>
                         <td>$50,000.00</td>
                         <td>$50,000.00</td>
                     </tr>
 
 
-                   
+
                 </tbody>
             </table>
         </div>
