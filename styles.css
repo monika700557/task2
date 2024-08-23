@@ -50,7 +50,6 @@ tr#first-row {
 .invoice-table {
     min-width: 99%;
     border-collapse: collapse;
-    border: 3px solid #0f6e95;
     text-align: left;
     margin: auto;
     max-height: 90vh;
